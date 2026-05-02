@@ -1,0 +1,12 @@
+services:
+
+  db:
+    container_name: jobportaldb
+    ports:
+      - "3306:3306"
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: jobportal
+    volumes:
+      - C:\Users\Praveen\Desktop:\var\lib\mysql
