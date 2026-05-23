@@ -6,6 +6,8 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
@@ -48,5 +50,8 @@ public class Company extends BaseEntity {
 
     @Column(name = "WEBSITE", length = 500)
     private String website;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "company")
+    private List<Job> jobs = new ArrayList<>();
 
 }
